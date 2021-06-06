@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vazimax</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" integrity="undefined" crossorigin="anonymous">
+    <script src="vuejs.js"></script>
+</head>
+<body>
+    <h1>Hello guys what's up</h1>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div id="app">
+                    <form action="">
+                        <input v-model="name" @keyup.enter="logName" type="text">
+                        <span>{{ name }}</span>
+                        <button class="btn btn-primary" @click.prevent="add">Submit</button>
+                    </form>
+                    <input type="text" v-model="init_value">
+                    <h1>{{counter}}</h1>
+
+                    <button @click="toggle = !toggle" class="btn btn-secondary">toggle</button>
+
+                    <div v-if="toggle">
+                        <button class="btn btn-primary" v-on:click="increase(5)">Inc</button>
+                        <button class="btn btn-primary" v-on:click="decrease(5)">Dec</button>
+                
+                        <h4>Result {{ calculator  }}</h4>
+                        <span 
+                            class="badge"
+                            :class="object1">
+                            {{message}}
+                        </span>
+                    </div>
+                    <div v-else>
+                        click to the button "toggle" to show the other component
+                    </div>
+
+                    <ul>
+                        <li v-for="course in courses">{{course.title}}</li>
+                    </ul>
+
+                </div>            
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js" ></script>
+</body>
+</html>
